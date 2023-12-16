@@ -1,0 +1,5 @@
+This is a test file.
+It contains words of varying lengths.
+Some short words are here.
+Longer words are also included.
+Check the program's output for the correct count.
