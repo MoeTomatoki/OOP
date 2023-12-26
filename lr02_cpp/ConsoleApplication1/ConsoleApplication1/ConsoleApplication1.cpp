@@ -1,11 +1,17 @@
 ﻿#include "Rectangle.h"
+#include "log_duration.h"
 #include <iostream>
+
+#define LOG_DURATION(message) LogDuration UNIQ_ID(__LINE__){message};
+#define UNIQ_ID_IMPL(lineno) _a_local_var_##lineno
+#define UNIQ_ID(lineno) UNIQ_ID_IMPL(lineno)
 
 int main() {
     // Создание двух прямоугольников с левой нижней и правой верхней координаты
     Rectangle rect1(1, 1, 4, 4);
     Rectangle rect2(3, 2, 6, 5);
 
+    LOG_DURATION("endl");
     int choice;
     do {
         // Отображаем меню
@@ -20,6 +26,7 @@ int main() {
         std::cin >> choice;
 
         // Выполнение соотвествующий команды
+        LOG_DURATION("endl");
         switch (choice) {
         case 1: {
             double dx, dy;
